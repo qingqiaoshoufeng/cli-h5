@@ -1,4 +1,5 @@
 import fse from 'fs-extra'
+import fs from 'fs'
 import path from 'path'
 import chalk from 'chalk'
 import ora from 'ora'
@@ -59,10 +60,11 @@ export const init = async () => {
       if (pkg) {
         pkg.name = projectName
         pkg.description = projectDescription || ''
+        pkg.dependencies['@castle/template-h5'] = 'latest'
         fse.writeJsonSync(pkgPath, pkg, { spaces: 2 })
       }
 
-      const index = fse.ensureFileSync(indexPath)
+      let index = fs.readFileSync(indexPath, 'utf8')
       if (index) {
         index = index.replace('/.yalc/@castle/template-h5', '/node_modules/@castle/template-h5')
         fse.outputFileSync(indexPath, index)

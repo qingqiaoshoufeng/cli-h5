@@ -9,15 +9,12 @@
     "preview": "castle-h5 preview"
   },
   "dependencies": {
-    "@castle/template-h5": "file:.yalc/@castle/template-h5",
-    "vue": "^3.3.11"
+    "@castle/template-h5": "file:.yalc/@castle/template-h5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "husky": "^8.0.3",
-    "vite": "^5.0.8"
+    "husky": "^8.0.3"
   }
 }

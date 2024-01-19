@@ -1,6 +1,6 @@
 {
   "name": "castle-h5-cli",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "author": "hxf",
   "license": "ISC",
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "http://10.10.3.188:9090/castle/cli-h5.git"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.2",
