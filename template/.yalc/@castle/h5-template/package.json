@@ -1,0 +1,17 @@
+{
+  "name": "@castle/h5-template",
+  "version": "0.0.0",
+  "type": "module",
+  "bin": {
+    "castle-h5": "bin/index.js"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.11"
+  },
+  "yalcSig": "e3de69c010a6d67ddf86ef7c8a0237f2"
+}

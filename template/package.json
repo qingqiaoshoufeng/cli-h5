@@ -1,0 +1,23 @@
+{
+  "name": "template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "castle-h5 dev",
+    "build": "castle-h5 build",
+    "preview": "castle-h5 preview"
+  },
+  "dependencies": {
+    "@castle/h5-template": "file:.yalc/@castle/h5-template",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.2",
+    "@commitlint/cli": "^18.4.4",
+    "@commitlint/config-conventional": "^18.4.4",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "husky": "^8.0.3",
+    "vite": "^5.0.8"
+  }
+}
