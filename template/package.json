@@ -1,7 +1,7 @@
 {
   "name": "template",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "castle-h5 dev",
@@ -9,7 +9,7 @@
     "preview": "castle-h5 preview"
   },
   "dependencies": {
-    "@castle/h5-template": "file:.yalc/@castle/h5-template",
+    "@castle/template-h5": "file:.yalc/@castle/template-h5",
     "vue": "^3.3.11"
   },
   "devDependencies": {

@@ -24,8 +24,10 @@ export const init = async () => {
     }
   }
 
+  // TODO：App init
+
   const projectName = await input({ message: 'Please enter project name：' })
-  const projecDescription = await input({ message: 'Please enter project description：' })
+  const projectDescription = await input({ message: 'Please enter project description：' })
   if (!projectName) {
     console.log(chalk.red('Project name must be entered！'))
     process.exit()
@@ -44,7 +46,7 @@ export const init = async () => {
   const indexPath = path.resolve(currentPath, `./${projectName}/index.html`)
   const outPath = path.resolve(currentPath, projectName)
 
-  download('direct:http://10.10.3.188:9090/castle/cli.git', tempPath, { clone: true }, (error) => {
+  download('direct:http://10.10.3.188:9090/castle/cli-h5.git', tempPath, { clone: true }, (error) => {
     if (error) {
       console.log(error)
       process.exit()
@@ -56,13 +58,13 @@ export const init = async () => {
       const pkg = fse.readJsonSync(pkgPath)
       if (pkg) {
         pkg.name = projectName
-        pkg.description = projecDescription || ''
+        pkg.description = projectDescription || ''
         fse.writeJsonSync(pkgPath, pkg, { spaces: 2 })
       }
 
       const index = fse.ensureFileSync(indexPath)
       if (index) {
-        index = index.replace('/.yalc/@castle/h5-template', '/node_modules/@castle/h5-template')
+        index = index.replace('/.yalc/@castle/template-h5', '/node_modules/@castle/template-h5')
         fse.outputFileSync(indexPath, index)
       }
 
