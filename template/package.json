@@ -6,15 +6,25 @@
   "scripts": {
     "dev": "castle-h5 dev",
     "build": "castle-h5 build",
-    "preview": "castle-h5 preview"
+    "preview": "castle-h5 preview",
+    "lint-staged": "npx lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{vue,js,jsx,cjs,mjs}": [
+      "eslint --ignore-path .gitignore"
+    ]
   },
   "dependencies": {
     "@castle/template-h5": "file:.yalc/@castle/template-h5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.6.2",
+    "@antfu/eslint-config": "^0.43.1",
     "@commitlint/cli": "^18.4.4",
     "@commitlint/config-conventional": "^18.4.4",
-    "husky": "^8.0.3"
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.20.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0"
   }
 }
