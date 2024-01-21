@@ -7,8 +7,7 @@
     "dev": "castle-h5 dev",
     "build": "castle-h5 build",
     "preview": "castle-h5 preview",
-    "lint-staged": "npx lint-staged",
-    "prepare": "husky install"
+    "lint-staged": "npx lint-staged"
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs}": [

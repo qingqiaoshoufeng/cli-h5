@@ -61,6 +61,8 @@ export const init = async () => {
         pkg.name = projectName
         pkg.description = projectDescription || ''
         pkg.dependencies['@castle/template-h5'] = 'latest'
+        pkg.scripts['prepare'] = 'husky install'
+        pkg.scripts['postinstall'] = 'husky install'
         fse.writeJsonSync(pkgPath, pkg, { spaces: 2 })
       }
 
