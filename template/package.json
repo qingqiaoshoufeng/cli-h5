@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "castle-h5 dev",
-    "build": "castle-h5 build",
+    "build:test": "castle-h5 build --mode test",
+    "build:staging": "castle-h5 build --mode staging",
+    "build:production": "castle-h5 build --mode production",
     "preview": "castle-h5 preview",
     "lint-staged": "npx lint-staged"
   },
