@@ -1,4 +1,8 @@
-export default ({ env }) => {
-  return {
-  }
-}
+export default ({ env }) => ({
+  lifecycle: {
+    beforeMount: (app) => {
+    },
+    mounted: (app) => {
+    },
+  },
+})
