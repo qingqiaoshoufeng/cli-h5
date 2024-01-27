@@ -1,0 +1,67 @@
+image: foolnofool/node-minio:latest
+
+stages:
+  - install
+  - build
+  - deploy
+
+cache:
+  key: ${CI_BUILD_REF_NAME}
+  paths:
+    - template/node_modules
+
+.common_script:
+  only:
+    - tags
+    - master
+    - /^release.*$/
+    - /^feat/castle/.*$/ # 临时调试分支
+  tags:
+    - castle
+
+install-job:
+  stage: install
+  extends: .common_script
+  script:
+    - cd template
+    - node -v
+    - npm -v
+    - yarn -v
+    - echo "🧩 开始安装依赖"
+    - yarn --registry=http://castle-npm.cp.hxdi.cn/
+
+build-job:
+  stage: build
+  extends: .common_script
+  artifacts:
+    name: "dist"
+    expire_in: 2 weeks
+    paths:
+      - template/dist/
+  script:
+    - echo "⏰ 开始代码打包"
+    - yarn build
+
+deploy-job:
+  stage: deploy
+  extends: .common_script
+  variables:
+    DELETE_CURL_API: '${CASTLE_SERVICE_ENDPOINT}/minio/remove/folder/expire?bucketName=${MINIO_BUCKET}&folderPrefix=${CI_PROJECT_NAME}%2Ftest%2F'
+  before_script:
+    - sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+    - apk add curl
+  script:
+    - echo "🚀 部署代码"
+    - echo ${MINIO_ENDPOINT} ${MINIO_BUCKET} ${MINIO_ACCESS_KEY} ${MINIO_SECRET_KEY}
+    # 设置 MinIO 别名和认证信息，连接MinIO
+    - mc config host add minio ${MINIO_ENDPOINT} ${MINIO_ACCESS_KEY} ${MINIO_SECRET_KEY}
+    - echo "删除目录空文件目录，删除接口：$DELETE_CURL_API"
+    # 删除该项目下过期版本的空文件夹
+    - curl --location $DELETE_CURL_API
+    # 生成目标路径
+    - export FOLDER_NAME="minio/${MINIO_BUCKET}/${CI_PROJECT_NAME}/test/${CI_COMMIT_SHA:0:8}"
+    - echo "MinIO目标目录名为：$FOLDER_NAME"
+    - mc rm -r --force $FOLDER_NAME
+    - echo "将 dist 目录下的所有文件复制到 MinIO 下:$FOLDER_NAME"
+    - mc cp -r template/dist/ $FOLDER_NAME
+    - echo "🎉 完成！"

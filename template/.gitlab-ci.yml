@@ -1,0 +1,5 @@
+# http://10.10.3.188:9090/castle/gitlab-ci
+include:
+  - project: 'Castle/gitlab-ci'
+    ref: master
+    file: '.castle-gitlab-ci.yml'
