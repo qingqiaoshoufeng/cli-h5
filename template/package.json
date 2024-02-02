@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "castle-h5 dev",
+    "build": "castle-h5 build",
     "build:test": "castle-h5 build --mode test",
     "build:staging": "castle-h5 build --mode staging",
     "build:production": "castle-h5 build --mode production",
@@ -26,6 +27,10 @@
     "eslint": "^8.56.0",
     "eslint-plugin-vue": "^9.20.1",
     "husky": "^8.0.3",
-    "lint-staged": "^15.2.0"
+    "lint-staged": "^15.2.0",
+    "rollup-plugin-visualizer": "^5.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
