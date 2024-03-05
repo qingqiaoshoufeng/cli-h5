@@ -20,7 +20,7 @@ export default {
 
 <template>
   <div>
-    测试页面1
+    测试页面2
   </div>
 </template>
 
