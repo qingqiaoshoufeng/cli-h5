@@ -23,6 +23,7 @@
     "husky": "^8.0.3"
   },
   "dependencies": {
+    "@castle/template-h5": "file:.yalc/@castle/template-h5",
     "@inquirer/confirm": "^2.0.15",
     "@inquirer/input": "^1.2.14",
     "chalk": "^4.1.0",
@@ -30,6 +31,8 @@
     "download-git-repo": "^3.0.2",
     "fs-extra": "^11.2.0",
     "ora": "^8.0.0",
-    "ping": "^0.4.4"
+    "ping": "^0.4.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.20.1"
   }
 }

@@ -18,7 +18,10 @@
     ]
   },
   "dependencies": {
-    "@castle/template-h5": "file:.yalc/@castle/template-h5"
+    "@castle/template-h5": "file:.yalc/@castle/template-h5",
+    "axios": "^1.6.8",
+    "jsencrypt": "^3.3.2",
+    "vant": "^4.8.11"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.43.1",

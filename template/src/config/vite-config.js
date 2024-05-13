@@ -1,7 +1,7 @@
 // import { visualizer } from 'rollup-plugin-visualizer'
 
 export default {
-  vite: ({ env }) => {
+  vite: () => {
     return {
       build: {
         rollupOptions: {
