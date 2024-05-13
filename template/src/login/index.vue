@@ -1,22 +1,12 @@
 <script setup>
 import { onMounted, ref } from 'vue'
-
-// import { useStore } from 'vuex'
 import { closeToast, showToast } from 'vant'
 import { useRouter } from 'vue-router'
-
-// import { useUserStore } from '#/store'
 import verification from '@/assets/images/verification.png'
 import { getVerificationCode, loginIn } from '@/apis/index.js'
-
-// import router from '@/router/index.js'
 import { encrypt } from '@/utils/tools.js'
 
-// const userStore = useUserStore()
-// const appStore = useAppStore()
 const router = useRouter()
-
-// const store = useStore()
 
 const imgUrl = ref(null)
 
@@ -32,16 +22,6 @@ const loginForm = ref({
   jcaptchaCode: '',
 // ssoTag: 'abcdefg', // 跳过验证码验证
 })
-
-// async function initStore() {
-//   const storeList = ['rules', 'userInfo', 'dict', 'menuInfo']
-//   const isInited = await Promise.all(
-//     storeList.map((item) => {
-//       return store.dispatch(`${item}/init`)
-//     }),
-//   )
-//   return isInited
-// }
 
 async function handleUserLogin() {
   showToast({
