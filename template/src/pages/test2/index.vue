@@ -7,7 +7,8 @@
       "sort": 8,
       "permissions": ["admin", "business-manage"],
       "hideInMenu": false,
-      "keepAlive": "BusinessManage"
+      "keepAlive": "BusinessManage",
+      "pageGroup":"1"
     }
   }
 </route>
