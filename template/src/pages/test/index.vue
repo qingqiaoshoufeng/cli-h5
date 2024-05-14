@@ -1,10 +1,10 @@
 <route lang="json">
   {
     "meta": {
-      "title": "测试页面",
+      "title": "测试页面1",
       "icon": "ReadFilled",
       "requiresAuth": true,
-      "sort": 8,
+      "sort": 1,
       "permissions": ["admin", "business-manage"],
       "hideInMenu": false,
       "keepAlive": "BusinessManage",

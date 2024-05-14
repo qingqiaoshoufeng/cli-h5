@@ -1,12 +1,12 @@
 <route lang="json">
   {
     "meta": {
-      "title": "测试页面2",
+      "title": "测试页面3",
       "icon": "ReadFilled",
       "requiresAuth": true,
-      "sort": 2,
+      "sort": 3,
       "permissions": ["admin", "business-manage"],
-      "hideInMenu": false,
+      "hideInMenu": true,
       "keepAlive": "BusinessManage",
       "pageGroup":"1"
     }
@@ -21,7 +21,7 @@ export default {
 
 <template>
   <div>
-    测试页面2
+    测试页面1
   </div>
 </template>
 
