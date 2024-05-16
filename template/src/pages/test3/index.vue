@@ -6,9 +6,13 @@
       "requiresAuth": true,
       "sort": 3,
       "permissions": ["admin", "business-manage"],
-      "hideInMenu": true,
+      "hideInMenu": false,
       "keepAlive": "BusinessManage",
-      "pageGroup":"1"
+      "pageGroup":"1",
+      "customBar":"customBar",
+      "barStyle":{
+        "height":"100px"
+      }
     }
   }
 </route>

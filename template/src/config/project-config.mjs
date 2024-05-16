@@ -1,5 +1,6 @@
-import login from '@/login/index1.vue'
+import login from '@/login/index.vue'
 import { getUserInfo } from '@/apis/index.js'
+import customBar from '@/components/customBar.vue'
 
 export default () => ({
   lifecycle: {
@@ -55,6 +56,11 @@ export default () => ({
     },
   },
   pages: {
-    login,
+    login, // 传入自定义的登录组件
+  },
+  barConfig: {
+    components: {
+      customBar,
+    },
   },
 })
